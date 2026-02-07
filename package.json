@@ -1,0 +1,16 @@
+{
+  "name": "almakt-transport-backend",
+  "version": "1.0.0",
+  "description": "It is the website for almakt agency that do the job of transportation",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdullah developer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "morgan": "^1.10.1"
+  }
+}
