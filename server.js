@@ -5,11 +5,13 @@ if (process.env.DB_TYPE === "local")
   mongoose.connect(process.env.LOCAL_DB_URL).then(() => {
     console.log("Local database is successfully connected.");
   });
-else
+else {
+  console.log("comes");
   mongoose.connect(process.env.CLOUD_DB_URL).then(() => {
     console.log("The cloud database is connected successfully");
   });
+}
 
-app.listen(process.env.PORT || 3000, "localhost", (req, res, next) => {
+app.listen(process.env.PORT || 3000, (req, res, next) => {
   console.log("The server is listening on port 3000");
 });

@@ -21,6 +21,10 @@ app.use(
   }),
 );
 
+app.get("/", (req, res) => {
+  res.send("Server is live");
+});
+
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/drivers", driverRouter);
 app.use("/api/v1/clients", clientRouter);
