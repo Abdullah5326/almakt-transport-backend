@@ -4,12 +4,15 @@ const {
   createDriver,
   updateDriver,
   deleteDriver,
+  getDriver,
 } = require("../controllers/driverController");
 const { protect } = require("../controllers/authController");
 
 const router = express.Router();
 
-router.route("/").get(protect, getAllDrivers).post(createDriver);
-router.route("/:id").patch(protect, updateDriver).delete(protect, deleteDriver);
+router.use(protect);
+
+router.route("/").get(getAllDrivers).post(createDriver);
+router.route("/:id").patch(updateDriver).delete(deleteDriver).get(getDriver);
 
 module.exports = router;

@@ -2,13 +2,31 @@ const catchAsync = require("../utils/catchAsync");
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    const data = await Model.find();
+    const docs = await Model.find();
 
     res.status(200).json({
       status: "success",
-      results: data.length,
+      results: docs.length,
       data: {
-        data,
+        data: docs,
+      },
+    });
+  });
+
+exports.getOne = (Model, populateObj) =>
+  catchAsync(async (req, res, next) => {
+    console.log(populateObj);
+    const id = req.params.id;
+    let query = Model.findById(id);
+
+    if (populateObj) query = query.populate(populateObj);
+
+    const doc = await query;
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: doc,
       },
     });
   });
@@ -17,10 +35,10 @@ exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const doc = await Model.create(req.body);
 
-    res.status(401).json({
+    res.status(201).json({
       status: "success",
       data: {
-        doc,
+        data: doc,
       },
     });
   });

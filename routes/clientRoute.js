@@ -4,13 +4,15 @@ const {
   getAllClients,
   createClient,
   updateClient,
+  getClient,
 } = require("../controllers/clientController");
 const { protect } = require("../controllers/authController");
 
 const router = express.Router();
 
-router.route("/").get(protect, getAllClients).post(protect, createClient);
-router.patch("/:id", updateClient);
-router.delete("/:id", deleteClient);
+router.use(protect);
+
+router.route("/").get(getAllClients).post(createClient);
+router.route("/:id").patch(updateClient).delete(deleteClient).get(getClient);
 
 module.exports = router;

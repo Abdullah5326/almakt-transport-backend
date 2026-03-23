@@ -24,6 +24,7 @@ const createSendToken = function (req, res, data, statusCode) {
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
+  console.log("runing");
   if (!req.cookies || !req.cookies.jwt)
     return next(
       new AppError("You are not logged in. Please log in again.", 401),
@@ -67,6 +68,18 @@ exports.login = catchAsync(async (req, res, next) => {
     return next(new AppError("The email or password is incorrect", 401));
 
   createSendToken(req, res, user, 200);
+});
+
+exports.logout = catchAsync(async (req, res, next) => {
+  res.cookie("jwt", "", {
+    maxAge: 10 * 1000,
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    status: "success",
+    message: "You are successfully logout.",
+  });
 });
 
 exports.getMe = catchAsync(async (req, res, next) => {

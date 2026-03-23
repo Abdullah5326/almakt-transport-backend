@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const userRouter = require("./routes/userRoute");
 const driverRouter = require("./routes/driverRoute");
@@ -14,14 +15,11 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get("/", async (req, res, next) => {
-  console.log("request is received");
-
-  res.status(200).json({
-    status: "success",
-    message: "The backend is successfully started",
-  });
-});
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/drivers", driverRouter);
