@@ -7,7 +7,7 @@ const {
   getOne,
 } = require("./handleFactory");
 
-exports.getAllClients = getAll(Client);
+exports.getAllClients = getAll(Client, { path: "trips" });
 exports.getClient = getOne(Client, { path: "trips" });
 exports.createClient = createOne(Client);
 exports.updateClient = updateOne(Client);

@@ -12,6 +12,6 @@ else {
   });
 }
 
-app.listen(process.env.PORT || 3000, (req, res, next) => {
+app.listen(process.env.PORT || 3000, "localhost", (req, res, next) => {
   console.log("The server is listening on port 3000");
 });
