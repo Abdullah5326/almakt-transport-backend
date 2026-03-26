@@ -6,7 +6,7 @@ const tripSchema = mongoose.Schema({
     required: [true, "The name of the tour is required."],
   },
 
-  location: {
+  origin: {
     type: String,
     required: [true, "The location of  the goods is required."],
   },
@@ -16,9 +16,14 @@ const tripSchema = mongoose.Schema({
     required: [true, "The destination of the trip is required."],
   },
 
-  date: {
+  startDate: {
     type: Date,
     default: Date.now(),
+  },
+
+  deadlineDate: {
+    type: Date,
+    required: [true, "The deadline date is required"],
   },
 
   driver: {
@@ -33,7 +38,7 @@ const tripSchema = mongoose.Schema({
     required: [true, "The client of the trip is required."],
   },
 
-  amountReceivingMethod: {
+  paymentMethod: {
     type: String,
     enum: ["cash", "online"],
   },
@@ -43,7 +48,7 @@ const tripSchema = mongoose.Schema({
     default: false,
   },
 
-  priceOfTrip: {
+  tripPrice: {
     type: Number,
     required: [true, "The price of the trip is required"],
   },

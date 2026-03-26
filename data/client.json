@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "65f1a1b2c3d4e5f601234101",
+    "name": "Abdullah Traders",
+    "address": "Karachi",
+    "mobileNo": "03010000001"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234102",
+    "name": "Khan Logistics",
+    "address": "Islamabad",
+    "mobileNo": "03010000002"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234103",
+    "name": "Raza Goods Transport",
+    "address": "Quetta",
+    "mobileNo": "03010000003"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234104",
+    "name": "Multan Cargo Services",
+    "address": "Multan",
+    "mobileNo": "03010000004"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234105",
+    "name": "Hyderabad Movers",
+    "address": "Hyderabad",
+    "mobileNo": "03010000005"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234106",
+    "name": "Lahore Transport Co",
+    "address": "Lahore",
+    "mobileNo": "03010000006"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234107",
+    "name": "Peshawar Goods",
+    "address": "Peshawar",
+    "mobileNo": "03010000007"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234108",
+    "name": "Sialkot Exporters",
+    "address": "Sialkot",
+    "mobileNo": "03010000008"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234109",
+    "name": "Gwadar Shipping",
+    "address": "Gwadar",
+    "mobileNo": "03010000009"
+  },
+  {
+    "_id": "65f1a1b2c3d4e5f601234110",
+    "name": "Capital Logistics",
+    "address": "Islamabad",
+    "mobileNo": "03010000010"
+  }
+]

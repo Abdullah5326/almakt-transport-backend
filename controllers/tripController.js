@@ -21,9 +21,9 @@ exports.getLastMonthTrips = async function (req, res, next) {
   console.log(new Date(`${year}/${month + 1}/${date + 1}`), new Date());
   const lastMonthTrips = await Trip.aggregate([
     {
-      $match: { date: { $lte: new Date() } },
+      $match: { startDate: { $lte: new Date() } },
     },
-    { $match: { date: { $gte: new Date(startDate) } } },
+    { $match: { startDate: { $gte: new Date(startDate) } } },
   ]);
 
   res.status(200).json({
@@ -41,9 +41,9 @@ exports.getLastYearTrips = async function (req, res, next) {
 
   const lastYearTrips = await Trip.aggregate([
     {
-      $match: { date: { $lte: new Date() } },
+      $match: { startDate: { $lte: new Date() } },
     },
-    { $match: { date: { $gte: new Date(startDate) } } },
+    { $match: { startDate: { $gte: new Date(startDate) } } },
   ]);
 
   res.status(200).json({
