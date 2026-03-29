@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://almakt-transport-frontend.vercel.app/",
+    origin: "https://almakt-transport-frontend.vercel.app",
   }),
 );
 
