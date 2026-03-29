@@ -24,7 +24,19 @@ exports.getLastMonthTrips = async function (req, res, next) {
       $match: { startDate: { $lte: new Date() } },
     },
     { $match: { startDate: { $gte: new Date(startDate) } } },
+    { $sort: { startDate: -1 } },
+    {
+      $lookup: {
+        from: "clients",
+        localField: "client",
+        foreignField: "_id",
+        as: "client",
+      },
+    },
+    { $unwind: "$client" },
   ]);
+
+  console.log(lastMonthTrips);
 
   res.status(200).json({
     status: "success",
@@ -44,6 +56,16 @@ exports.getLastYearTrips = async function (req, res, next) {
       $match: { startDate: { $lte: new Date() } },
     },
     { $match: { startDate: { $gte: new Date(startDate) } } },
+    { $sort: { startDate: -1 } },
+    {
+      $lookup: {
+        from: "clients",
+        localField: "client",
+        foreignField: "_id",
+        as: "client",
+      },
+    },
+    { $unwind: "$client" },
   ]);
 
   res.status(200).json({
