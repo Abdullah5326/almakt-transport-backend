@@ -41,7 +41,7 @@ exports.getLastMonthTrips = async function (req, res, next) {
   res.status(200).json({
     status: "success",
     results: lastMonthTrips.length,
-    data: { lastDurationTrips: lastMonthTrips },
+    data: { data: lastMonthTrips },
   });
 };
 
@@ -71,6 +71,6 @@ exports.getLastYearTrips = async function (req, res, next) {
   res.status(200).json({
     status: "success",
     results: lastYearTrips.length,
-    data: { lastDurationTrips: lastYearTrips },
+    data: { data: lastYearTrips },
   });
 };
