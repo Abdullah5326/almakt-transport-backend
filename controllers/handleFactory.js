@@ -45,6 +45,7 @@ exports.createOne = (Model) =>
       },
     });
   });
+
 exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
     const id = req.params.id;

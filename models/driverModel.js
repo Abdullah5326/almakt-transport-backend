@@ -32,6 +32,20 @@ const driverSchema = mongoose.Schema(
       type: String,
       validate: [validator.isEmail, "Please provide correct format of email."],
     },
+    basicSalary: {
+      type: String,
+      required: [true, "The basic salary is required"],
+    },
+    vehicleFlatNo: {
+      type: String,
+      required: [true, "The vehicle flat no is required"],
+    },
+    status: {
+      type: String,
+      enum: ["onLeave", "active", "inactive"],
+      default: "active",
+      trim: true,
+    },
   },
   {
     toObject: { virtuals: true },

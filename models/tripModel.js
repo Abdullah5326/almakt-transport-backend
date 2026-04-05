@@ -40,7 +40,7 @@ const tripSchema = mongoose.Schema({
 
   paymentMethod: {
     type: String,
-    enum: ["cash", "online"],
+    enum: ["cash", "online", "credit"],
   },
 
   isCompleted: {
@@ -56,6 +56,10 @@ const tripSchema = mongoose.Schema({
   receivedAmount: {
     type: Number,
     default: 0,
+  },
+  paidTo: {
+    type: String,
+    enum: ["owner", "driver"],
   },
 });
 
