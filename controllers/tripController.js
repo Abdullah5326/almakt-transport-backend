@@ -34,9 +34,16 @@ exports.getLastMonthTrips = async function (req, res, next) {
       },
     },
     { $unwind: "$client" },
+    {
+      $lookup: {
+        from: "drivers",
+        localField: "driver",
+        foreignField: "_id",
+        as: "driver",
+      },
+    },
+    { $unwind: "$driver" },
   ]);
-
-  console.log(lastMonthTrips);
 
   res.status(200).json({
     status: "success",
@@ -66,6 +73,17 @@ exports.getLastYearTrips = async function (req, res, next) {
       },
     },
     { $unwind: "$client" },
+    {
+      $lookup: {
+        from: "drivers",
+        localField: "driver",
+        foreignField: "_id",
+        as: "driver",
+      },
+    },
+    {
+      $unwind: "$driver",
+    },
   ]);
 
   res.status(200).json({

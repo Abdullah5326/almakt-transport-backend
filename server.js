@@ -6,7 +6,6 @@ if (process.env.DB_TYPE === "local")
     console.log("Local database is successfully connected.");
   });
 else {
-  console.log("comes");
   mongoose.connect(process.env.CLOUD_DB_URL).then(() => {
     console.log("The cloud database is connected successfully");
   });
