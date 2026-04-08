@@ -6,7 +6,9 @@
     "vehicleRenewalDate": "2026-06-15T00:00:00.000Z",
     "idCardExpiryDate": "2027-01-10T00:00:00.000Z",
     "mobileNo": "03001234567",
-    "email": "ali.khan@example.com"
+    "email": "ali.khan@example.com",
+    "basicSalary": 40000,
+    "vehicleFlatNo": "VEH-001"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234002",
@@ -15,7 +17,9 @@
     "vehicleRenewalDate": "2026-07-20T00:00:00.000Z",
     "idCardExpiryDate": "2026-12-05T00:00:00.000Z",
     "mobileNo": "03111234567",
-    "email": "usman.shah@example.com"
+    "email": "usman.shah@example.com",
+    "basicSalary": 42000,
+    "vehicleFlatNo": "VEH-002"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234003",
@@ -24,7 +28,9 @@
     "vehicleRenewalDate": "2026-05-10T00:00:00.000Z",
     "idCardExpiryDate": "2027-03-15T00:00:00.000Z",
     "mobileNo": "03221234567",
-    "email": "ahmed.raza@example.com"
+    "email": "ahmed.raza@example.com",
+    "basicSalary": 38000,
+    "vehicleFlatNo": "VEH-003"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234004",
@@ -33,7 +39,9 @@
     "vehicleRenewalDate": "2026-08-01T00:00:00.000Z",
     "idCardExpiryDate": "2026-11-25T00:00:00.000Z",
     "mobileNo": "03331234567",
-    "email": "bilal.ahmed@example.com"
+    "email": "bilal.ahmed@example.com",
+    "basicSalary": 45000,
+    "vehicleFlatNo": "VEH-004"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234005",
@@ -42,7 +50,9 @@
     "vehicleRenewalDate": "2026-09-18T00:00:00.000Z",
     "idCardExpiryDate": "2027-04-10T00:00:00.000Z",
     "mobileNo": "03441234567",
-    "email": "hassan.ali@example.com"
+    "email": "hassan.ali@example.com",
+    "basicSalary": 47000,
+    "vehicleFlatNo": "VEH-005"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234006",
@@ -51,7 +61,9 @@
     "vehicleRenewalDate": "2026-04-22T00:00:00.000Z",
     "idCardExpiryDate": "2026-10-30T00:00:00.000Z",
     "mobileNo": "03551234567",
-    "email": "imran.khan@example.com"
+    "email": "imran.khan@example.com",
+    "basicSalary": 50000,
+    "vehicleFlatNo": "VEH-006"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234007",
@@ -60,7 +72,9 @@
     "vehicleRenewalDate": "2026-06-05T00:00:00.000Z",
     "idCardExpiryDate": "2027-02-20T00:00:00.000Z",
     "mobileNo": "03661234567",
-    "email": "saad.malik@example.com"
+    "email": "saad.malik@example.com",
+    "basicSalary": 36000,
+    "vehicleFlatNo": "VEH-007"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234008",
@@ -69,7 +83,9 @@
     "vehicleRenewalDate": "2026-07-12T00:00:00.000Z",
     "idCardExpiryDate": "2026-12-18T00:00:00.000Z",
     "mobileNo": "03771234567",
-    "email": "zain.abbas@example.com"
+    "email": "zain.abbas@example.com",
+    "basicSalary": 55000,
+    "vehicleFlatNo": "VEH-008"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234009",
@@ -78,7 +94,9 @@
     "vehicleRenewalDate": "2026-08-25T00:00:00.000Z",
     "idCardExpiryDate": "2027-05-05T00:00:00.000Z",
     "mobileNo": "03881234567",
-    "email": "faisal.qureshi@example.com"
+    "email": "faisal.qureshi@example.com",
+    "basicSalary": 48000,
+    "vehicleFlatNo": "VEH-009"
   },
   {
     "_id": "65f1a1b2c3d4e5f601234010",
@@ -87,6 +105,8 @@
     "vehicleRenewalDate": "2026-09-30T00:00:00.000Z",
     "idCardExpiryDate": "2027-06-15T00:00:00.000Z",
     "mobileNo": "03991234567",
-    "email": "tariq.mehmood@example.com"
+    "email": "tariq.mehmood@example.com",
+    "basicSalary": 46000,
+    "vehicleFlatNo": "VEH-010"
   }
 ]

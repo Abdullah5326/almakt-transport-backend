@@ -14,11 +14,13 @@ exports.updateTrip = updateOne(Trip);
 exports.deleteTrip = deleteOne(Trip);
 
 exports.getLastMonthTrips = async function (req, res, next) {
+  console.log("comes");
   const month = new Date().getMonth();
   const year = new Date().getFullYear();
   const date = new Date().getDate();
   const startDate = new Date(`${year}/${month}/${date + 1}`);
   console.log(new Date(`${year}/${month + 1}/${date + 1}`), new Date());
+  console.log(startDate);
   const lastMonthTrips = await Trip.aggregate([
     {
       $match: { startDate: { $lte: new Date() } },
@@ -44,7 +46,7 @@ exports.getLastMonthTrips = async function (req, res, next) {
     },
     { $unwind: "$driver" },
   ]);
-
+  console.log(lastMonthTrips);
   res.status(200).json({
     status: "success",
     results: lastMonthTrips.length,
