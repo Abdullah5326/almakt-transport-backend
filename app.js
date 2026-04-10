@@ -7,6 +7,7 @@ const userRouter = require("./routes/userRoute");
 const driverRouter = require("./routes/driverRoute");
 const clientRouter = require("./routes/clientRoute");
 const tripRouter = require("./routes/tripRoute");
+const vehicleRouter = require("./routes/vehicleRoute");
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
@@ -31,6 +32,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/drivers", driverRouter);
 app.use("/api/v1/clients", clientRouter);
 app.use("/api/v1/trips", tripRouter);
+app.use("/api/v1/vehicles", vehicleRouter);
 
 app.use(globalErrorHandler);
 

@@ -8,6 +8,7 @@ const {
   getLastMonthTrips,
   getLastYearTrips,
   durationalTrips,
+  getTripsByDuration,
 } = require("../controllers/tripController");
 const { protect } = require("../controllers/authController");
 
@@ -19,6 +20,7 @@ router.route("/").get(getAllTrips).post(createTrip);
 router.get("/last-month-trips", getLastMonthTrips);
 router.get("/last-year-trips", getLastYearTrips);
 router.get("/durational-trips", durationalTrips);
+router.get("/trips-by-duration", getTripsByDuration);
 router.route("/:id").patch(updateTrip).delete(deleteTrip).get(getTrip);
 
 module.exports = router;

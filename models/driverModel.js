@@ -8,14 +8,10 @@ const driverSchema = mongoose.Schema(
       required: [true, "This field is required"],
     },
 
-    vehicleName: {
-      type: String,
-      required: [true, "The vehicle name field is required."],
-    },
-
-    vehicleRenewalDate: {
-      type: Date,
-      required: [true, "The vehicle renewal date is required"],
+    vehicle: {
+      type: mongoose.Types.ObjectId,
+      ref: "Vehicle",
+      required: [true, "The vehicle is required"],
     },
 
     idCardExpiryDate: {
@@ -36,10 +32,6 @@ const driverSchema = mongoose.Schema(
       type: String,
       required: [true, "The basic salary is required"],
     },
-    vehicleFlatNo: {
-      type: String,
-      required: [true, "The vehicle flat no is required"],
-    },
     status: {
       type: String,
       enum: ["onLeave", "active", "inactive"],
@@ -50,6 +42,7 @@ const driverSchema = mongoose.Schema(
   {
     toObject: { virtuals: true },
     toJSON: { virtuals: true },
+    strictPopulate: false,
   },
 );
 
