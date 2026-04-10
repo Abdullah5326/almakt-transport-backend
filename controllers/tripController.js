@@ -143,6 +143,7 @@ exports.getTripsByDuration = catchAsync(async function (req, res, next) {
     default:
       throw new Error(next("Please provide valid duration"));
   }
+  query = query.populate([{ path: "client" }, { path: "driver" }]);
   const result = await query;
   res.status(200).json({
     status: "success",
