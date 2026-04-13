@@ -12,6 +12,7 @@ const createSendToken = function (req, res, data, statusCode) {
   res.cookie("jwt", token, {
     maxAge: 90 * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: true,
   });
 
   res.status(statusCode).json({
