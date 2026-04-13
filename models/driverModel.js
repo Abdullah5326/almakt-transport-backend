@@ -32,6 +32,9 @@ const driverSchema = mongoose.Schema(
       type: String,
       required: [true, "The basic salary is required"],
     },
+    creditAmount: {
+      type: Number,
+    },
     status: {
       type: String,
       enum: ["onLeave", "active", "inactive"],

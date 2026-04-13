@@ -14,7 +14,7 @@ const { protect } = require("../controllers/authController");
 
 const router = express.Router();
 
-// router.use(protect);
+router.use(protect);
 
 router.route("/").get(getAllTrips).post(createTrip);
 router.get("/last-month-trips", getLastMonthTrips);

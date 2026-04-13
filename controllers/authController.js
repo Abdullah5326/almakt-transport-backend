@@ -24,7 +24,6 @@ const createSendToken = function (req, res, data, statusCode) {
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
-  console.log("runing");
   if (!req.cookies || !req.cookies.jwt)
     return next(
       new AppError("You are not logged in. Please log in again.", 401),
@@ -57,6 +56,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req, res, next) => {
+  console.log(req.body);
   const { email, password } = req.body;
   if (!email || !password)
     return next(new AppError("Please provide email or password", 400));
@@ -66,7 +66,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   if (!user || !(await user.correctPasswords(password, user.password)))
     return next(new AppError("The email or password is incorrect", 401));
-
+  console.log(user);
   createSendToken(req, res, user, 200);
 });
 

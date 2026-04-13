@@ -8,6 +8,7 @@ const driverRouter = require("./routes/driverRoute");
 const clientRouter = require("./routes/clientRoute");
 const tripRouter = require("./routes/tripRoute");
 const vehicleRouter = require("./routes/vehicleRoute");
+const maintenanceRouter = require("./routes/maintenanceRoute");
 const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
@@ -22,6 +23,7 @@ app.use(
       "http://localhost:5173",
       "https://almakt-transport-frontend.vercel.app",
     ],
+    credentials: true,
   }),
 );
 app.get("/", (req, res) => {
@@ -33,6 +35,7 @@ app.use("/api/v1/drivers", driverRouter);
 app.use("/api/v1/clients", clientRouter);
 app.use("/api/v1/trips", tripRouter);
 app.use("/api/v1/vehicles", vehicleRouter);
+app.use("/api/v1/maintenances", maintenanceRouter);
 
 app.use(globalErrorHandler);
 
