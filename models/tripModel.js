@@ -8,7 +8,7 @@ const tripSchema = mongoose.Schema({
 
   origin: {
     type: String,
-    required: [true, "The location of  the goods is required."],
+    required: [true, "The origin of  the goods is required."],
   },
 
   destination: {

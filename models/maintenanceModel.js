@@ -15,6 +15,16 @@ const maintenanceSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  category: {
+    type: String,
+    required: [true, "The maintenance category is required"],
+    enum: {
+      values: ["spare-parts", "oil-change", "labour-charge", "diesel"],
+      message: "Please select one of the available maintenance categories",
+    },
+    lowercase: true,
+    trim: true,
+  },
 });
 
 const Maintenance = mongoose.model("Maintenance", maintenanceSchema);
