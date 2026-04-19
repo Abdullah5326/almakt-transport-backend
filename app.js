@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require("path");
 
 const userRouter = require("./routes/userRoute");
 const driverRouter = require("./routes/driverRoute");
@@ -26,6 +27,8 @@ app.use(
     credentials: true,
   }),
 );
+
+app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   res.send("Server is live");
 });
