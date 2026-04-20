@@ -59,6 +59,12 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    mobile: String,
+    address: {
+      country: String,
+      city: String,
+      postalCode: String,
+    },
   },
   {
     timestamps: true, // adds createdAt & updatedAt automatically

@@ -95,12 +95,14 @@ exports.getMe = catchAsync(async (req, res, next) => {
 });
 
 exports.updateMe = catchAsync(async (req, res, next) => {
+  console.log(req.body, "check");
   const fieldsToUpdate = {
-    name: req.body.name,
-    email: req.body.email,
+    name: req.body?.name,
+    email: req.body?.email,
+    address: req.body?.address,
   };
-
-  if (req.file) fieldsToUpdate.profileImg = req.file.filename;
+  console.log(fieldsToUpdate);
+  if (req?.file) fieldsToUpdate.profileImg = req.file?.filename;
 
   const user = await User.findByIdAndUpdate(req.user._id, fieldsToUpdate, {
     runValidators: true,
@@ -116,7 +118,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteMe = catchAsync(async (req, res, next) => {
-  const user = await User.findByIdAndUpdate(
+  await User.findByIdAndUpdate(
     req.user._id,
     { isActive: false },
     { returnDocument: "after" },
@@ -127,15 +129,6 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, "uploads/profile/");
-//   },
-//   filename: (req, file, cb) => {
-//     const uniqueName = "user-" + Date.now() + "-" + file.originalname;
-//     cb(null, uniqueName);
-//   },
-// });
 const storage = multer.memoryStorage();
 const fileFilter = (req, file, cb) => {
   if (file.mimetype.startsWith("image")) {
@@ -151,6 +144,7 @@ exports.upload = multer({
 });
 
 exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
+  console.log(req.body, "resixe");
   if (!req.file) return next();
 
   req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
